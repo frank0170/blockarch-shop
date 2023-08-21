@@ -1,4 +1,4 @@
-# ProShop eCommerce Platform (v2)
+# BlockArch eCommerce
 
 > eCommerce platform built with the MERN stack & Redux.
 
