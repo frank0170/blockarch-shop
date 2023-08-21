@@ -99,10 +99,20 @@ const Header = () => {
               </svg>
             </Navbar.Brand>
           </LinkContainer>
-          <div style={{display: 'flex', justifyContent: 'center', width: '70%'}}>
-          <LinkContainer to='/produse' >
-            <Nav.Link> <p style={{fontSize: '25px'}}>Produse</p></Nav.Link>
+          <div style={{display: 'flex', justifyContent: 'center', width: '70%', gap: '15px', marginTop:'13px'}}>
+          <LinkContainer to='/servere' >
+            <Nav.Link> <p style={{fontSize: '25px'}}>Servere</p></Nav.Link>
           </LinkContainer>
+          <LinkContainer to='/workstation' >
+            <Nav.Link> <p style={{fontSize: '25px'}}>Workstation</p></Nav.Link>
+          </LinkContainer>
+          <LinkContainer to='/gaming' >
+            <Nav.Link> <p style={{fontSize: '25px'}}>Gaming</p></Nav.Link>
+          </LinkContainer>
+          <LinkContainer to='/software' >
+            <Nav.Link> <p style={{fontSize: '25px'}}>Software</p></Nav.Link>
+          </LinkContainer>
+
           </div>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

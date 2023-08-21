@@ -9,6 +9,7 @@ import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 import Meta from '../components/Meta';
 
+
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
 
@@ -16,6 +17,7 @@ const HomeScreen = () => {
     keyword,
     pageNumber,
   });
+
 
 
   return (
@@ -36,7 +38,7 @@ const HomeScreen = () => {
       ) : (
         <>
           <Meta />
-          <h1>Noutati</h1>
+          <h1 className='text-white'>Noutati</h1>
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

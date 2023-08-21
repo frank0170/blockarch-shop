@@ -67,7 +67,7 @@ const ProductScreen = () => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
+      <Link className='btn btn-light my-3' to='/' style={{backgroundColor: '#363636', color: 'white'}}>
         Inapoi
       </Link>
       {isLoading ? (
@@ -83,27 +83,27 @@ const ProductScreen = () => {
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
-            <Col md={3}>
-              <ListGroup variant='flush'>
-                <ListGroup.Item>
+            <Col md={3} >
+              <ListGroup variant='flush' >
+                <ListGroup.Item style={{backgroundColor: '#363636'}}>
                   <h3>{product.name}</h3>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor: '#363636'}}>
                   <Rating
                     value={product.rating}
                     text={`${product.numReviews} review-uri`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Pret: €{product.price}</ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor: '#363636'}}>Pret: €{product.price}</ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor: '#363636'}}>
                   Descriere: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
-              <Card>
+              <Card >
                 <ListGroup variant='flush'>
-                  <ListGroup.Item>
+                  <ListGroup.Item style={{backgroundColor: '#363636'}}>
                     <Row>
                       <Col>Pret:</Col>
                       <Col>
@@ -111,7 +111,7 @@ const ProductScreen = () => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
-                  <ListGroup.Item>
+                  <ListGroup.Item style={{backgroundColor: '#363636'}}>
                     <Row>
                       <Col>Status:</Col>
                       <Col>
@@ -122,7 +122,7 @@ const ProductScreen = () => {
 
                   {/* Qty Select */}
                   {product.countInStock > 0 && (
-                    <ListGroup.Item>
+                    <ListGroup.Item style={{backgroundColor: '#363636'}}>
                       <Row>
                         <Col>Cantitate:</Col>
                         <Col>
@@ -130,6 +130,7 @@ const ProductScreen = () => {
                             as='select'
                             value={qty}
                             onChange={(e) => setQty(Number(e.target.value))}
+                            
                           >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
@@ -144,7 +145,7 @@ const ProductScreen = () => {
                     </ListGroup.Item>
                   )}
 
-                  <ListGroup.Item>
+                  <ListGroup.Item style={{backgroundColor: '#363636'}}>
                     <Button
                       className='btn-block'
                       type='button'
@@ -158,21 +159,21 @@ const ProductScreen = () => {
               </Card>
             </Col>
           </Row>
-          <Row className='review'>
-            <Col md={6}>
-              <h2>Review-uri</h2>
+          <Row className='review' >
+            <Col md={6} >
+              <h2 style={{backgroundColor: '#363636', border: '1px solid black'}}>Review-uri</h2>
               {product.reviews.length === 0 && <Message>Nici un review</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
-                  <ListGroup.Item key={review._id}>
+                  <ListGroup.Item key={review._id} style={{backgroundColor: '#363636'}}>
                     <strong>{review.name}</strong>
                     <Rating value={review.rating} />
                     <p>{review.createdAt.substring(0, 10)}</p>
                     <p>{review.comment}</p>
                   </ListGroup.Item>
                 ))}
-                <ListGroup.Item>
-                  <h2>Scrie un review</h2>
+                <ListGroup.Item style={{backgroundColor: '#363636', border: '1px solid black'}}>
+                  <h2 style={{backgroundColor: '#363636', border: '1px solid black'}}>Scrie un review</h2>
 
                   {loadingProductReview && <Loader />}
 

@@ -16,7 +16,10 @@ import PrivateRoute from './components/PrivateRoute';
 import AdminRoute from './components/AdminRoute';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-import Products from './screens/Products';
+import Products from './screens/ecrane/Products';
+import Workstation from './screens/ecrane/Workstation'
+import Gaming from './screens/ecrane/Gaming'
+import Software from './screens/ecrane/Software'
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -45,7 +48,10 @@ const router = createBrowserRouter(
         element={<HomeScreen />}
       />
       <Route path='/product/:id' element={<ProductScreen />} />
-      <Route path='/produse' element={<Products/>}/>
+      <Route path='/servere' element={<Products/>}/>
+      <Route path='/workstation' element={<Workstation/>}/>
+      <Route path='/gaming' element={<Gaming/>}/>
+      <Route path='/software' element={<Software/>}/>
       <Route path='/cart' element={<CartScreen />} />
       <Route path='/login' element={<LoginScreen />} />
       <Route path='/register' element={<RegisterScreen />} />
