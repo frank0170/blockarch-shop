@@ -99,24 +99,29 @@ const Header = () => {
               </svg>
             </Navbar.Brand>
           </LinkContainer>
-          <LinkContainer to='/produse'>
-            <Nav.Link>Produse</Nav.Link>
+          <div style={{display: 'flex', justifyContent: 'center', width: '70%'}}>
+          <LinkContainer to='/produse' >
+            <Nav.Link> <p style={{fontSize: '25px'}}>Produse</p></Nav.Link>
           </LinkContainer>
+          </div>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              <SearchBox />
+
+
+              {/* <SearchBox /> */}
               <LinkContainer to='/cart'>
                 <Nav.Link>
+                  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                   <FaShoppingCart /> Cos
                   {cartItems.length > 0 && (
                     <Badge pill bg='success' style={{ marginLeft: '5px' }}>
                       {cartItems.reduce((a, c) => a + c.qty, 0)}
                     </Badge>
-                  )}
+                  )}</div>
                 </Nav.Link>
               </LinkContainer>
-              {userInfo ? (
+              {/* {userInfo ? (
                 <>
                   <NavDropdown title={userInfo.name} id='username'>
                     <LinkContainer to='/profile'>
@@ -133,7 +138,7 @@ const Header = () => {
                     <FaUser /> Sign In
                   </Nav.Link>
                 </LinkContainer>
-              )}
+              )} */}
 
               {/* Admin Links */}
               {userInfo && userInfo.isAdmin && (
