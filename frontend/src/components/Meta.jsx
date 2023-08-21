@@ -11,8 +11,8 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To Modvin',
-  description: 'Bun venit pe site-ul oficial Modvin',
+  title: 'BlockArch SHOP',
+  description: 'Bun venit pe site-ul oficial BlockArch',
   keywords: 'panouri solare, fotovoltaice, invertoare',
 };
 

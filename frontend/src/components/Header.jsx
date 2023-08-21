@@ -122,7 +122,7 @@ const Header = () => {
               {/* <SearchBox /> */}
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '5px'}}>
                   <FaShoppingCart /> Cos
                   {cartItems.length > 0 && (
                     <Badge pill bg='success' style={{ marginLeft: '5px' }}>
