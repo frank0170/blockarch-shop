@@ -81,12 +81,12 @@ const ProductScreen = () => {
           <Meta title={product.name} description={product.description} />
           <Row>
             <Col md={6}>
-              <Image src={product.image} alt={product.name} fluid />
+              <Image src={product.image} alt={product.name} fluid className='rounded' />
             </Col>
             <Col md={3} >
               <ListGroup variant='flush' >
                 <ListGroup.Item style={{backgroundColor: '#363636'}}>
-                  <h3>{product.name}</h3>
+                  <h3 className='text-white'>{product.name}</h3>
                 </ListGroup.Item>
                 <ListGroup.Item style={{backgroundColor: '#363636'}}>
                   <Rating
@@ -94,9 +94,9 @@ const ProductScreen = () => {
                     text={`${product.numReviews} review-uri`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item style={{backgroundColor: '#363636'}}>Pret: €{product.price}</ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor: '#363636'}}><span className='text-white'>Pret:</span> {product.price}</ListGroup.Item>
                 <ListGroup.Item style={{backgroundColor: '#363636'}}>
-                  Descriere: {product.description}
+                  <span className='text-white'>Descriere: </span> {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -105,7 +105,7 @@ const ProductScreen = () => {
                 <ListGroup variant='flush'>
                   <ListGroup.Item style={{backgroundColor: '#363636'}}>
                     <Row>
-                      <Col>Pret:</Col>
+                      <Col className='text-white'>Pret:</Col>
                       <Col>
                         <strong>€{product.price}</strong>
                       </Col>
@@ -113,7 +113,7 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                   <ListGroup.Item style={{backgroundColor: '#363636'}}>
                     <Row>
-                      <Col>Status:</Col>
+                      <Col className='text-white'>Status:</Col>
                       <Col>
                         {product.countInStock > 0 ? 'In Stoc' : 'Fara stoc'}
                       </Col>
@@ -124,7 +124,7 @@ const ProductScreen = () => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item style={{backgroundColor: '#363636'}}>
                       <Row>
-                        <Col>Cantitate:</Col>
+                        <Col className='text-white'>Cantitate:</Col>
                         <Col>
                           <Form.Control
                             as='select'
@@ -154,6 +154,7 @@ const ProductScreen = () => {
                     >
                       Adauga in Cos
                     </Button>
+
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
@@ -161,7 +162,12 @@ const ProductScreen = () => {
           </Row>
           <Row className='review' >
             <Col md={6} >
-              <h2 style={{backgroundColor: '#363636', border: '1px solid black'}}>Review-uri</h2>
+              <div style={{backgroundColor: '#363636', border: '1px solid black'}}>
+                <h2 style={{backgroundColor: '#363636', border: '1px solid black'}} className='text-white'>Pezentare</h2>
+                <p style={{padding: '12px'}}>{product.description}</p>
+              </div>
+              <br/>
+              <h2 style={{backgroundColor: '#363636', border: '1px solid black'}} className='text-white'>Review-uri</h2>
               {product.reviews.length === 0 && <Message>Nici un review</Message>}
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
@@ -173,7 +179,7 @@ const ProductScreen = () => {
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item style={{backgroundColor: '#363636', border: '1px solid black'}}>
-                  <h2 style={{backgroundColor: '#363636', border: '1px solid black'}}>Scrie un review</h2>
+                  <h2 style={{backgroundColor: '#363636', border: '1px solid black'}} className='text-white'>Scrie un review</h2>
 
                   {loadingProductReview && <Loader />}
 

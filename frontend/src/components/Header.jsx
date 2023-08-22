@@ -131,7 +131,7 @@ const Header = () => {
                   )}</div>
                 </Nav.Link>
               </LinkContainer>
-              {/* {userInfo ? (
+              {userInfo ? (
                 <>
                   <NavDropdown title={userInfo.name} id='username'>
                     <LinkContainer to='/profile'>
@@ -145,10 +145,14 @@ const Header = () => {
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <FaUser /> Sign In
+                  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '2px', flexWrap: 'nowrap'}}>
+                    <FaUser/>
+                    <span>Sign</span>
+                    <span>in</span>
+                    </div>
                   </Nav.Link>
                 </LinkContainer>
-              )} */}
+              )}
 
               {/* Admin Links */}
               {userInfo && userInfo.isAdmin && (

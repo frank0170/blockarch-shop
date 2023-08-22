@@ -71,9 +71,11 @@ const HomeScreen = () => {
       <>
         <Meta />
         <h1 className='text-white'>Gaming</h1>
-        <Button onClick={() => setCategory('all')}>All</Button>
-        <Button onClick={() => setCategory('electronics')}>Electronics</Button>
-        <Button onClick={() => setCategory('sample')}>Sample</Button>
+
+        {/* <Button style={{marginRight: '5px'}} onClick={() => setCategory('all')}>All</Button>
+        <Button onClick={() => setCategory('electronics')}>AMD</Button>
+        <Button onClick={() => setCategory('sample')}>Intel</Button> */}
+
         <Row>
           {gaming.map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
